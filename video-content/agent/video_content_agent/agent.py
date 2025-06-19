@@ -13,7 +13,7 @@ def query_content_db(video_id: str) -> str:
   """Query the video content database to pull information about the video.
 
   The video content database contains the transcript, summary and more useful
-  information for a content director to get fast facts about a video.
+  information for a show director to get fast facts about a video.
 
   Args:
     video_id: The ID of the video to query. This typically corresponds to the
@@ -27,7 +27,7 @@ def query_content_db(video_id: str) -> str:
   return f'Here is a mock summary about the video for {video_id}'
 
 root_agent = Agent(
-  name='video-content-agent',
+  name='video_content_agent',
   model='gemini-2.5-pro',
   description=(
     'Agent to answer questions about video content from a database.'
