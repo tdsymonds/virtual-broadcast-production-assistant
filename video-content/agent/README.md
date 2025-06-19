@@ -7,13 +7,36 @@ Gemini for natural language understanding and response generation.
 
 ## Purpose
 
-The primary purpose of this agent is to allow users (e.g. show directors) to
+The primary purpose of this agent is to allow users (e.g., content directors) to
 query a video content database for facts, summaries, transcripts, and details
 about individuals involved in specific videos. It acts as an intelligent
-interface to the processed video data.
+interface to the processed video data, providing structured responses to natural
+language queries.
 
-# Get started
 
-1. Create a copy of `.env.example` called `.env` and update the values.
-2. Run `pip install -r requirements.txt`
-3. Run `adk web`
+## Setup & Local Development
+
+1. **Navigate to Agent Directory:**
+    ```bash
+    cd video_content_agent
+    ```
+2. **Create Environment File:**
+    Create a `.env` file in the `video_content_agent` based on the
+    `.env.example` file.
+
+3. **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. **Run Locally:**
+    From the `video-content/agent` directory (one level up from
+    `video_content_agent`):
+    ```bash
+    adk web
+    ```
+    This will start a local web server for your agent, typically accessible at
+    `http://localhost:8000`.
+
+## Deployment
+
+For production deployment, refer to the [Google ADK documentation](https://developers.google.com/adk/docs/deploy). Ensure that the deployment environment has the `FIRESTORE_DATABASE_NAME` environment variable configured with the correct Firestore database name. The service account running the agent must have `Cloud Datastore Viewer` permissions for the specified database.

@@ -11,4 +11,22 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-from . import agent
+"""Pydantic models for the Video Content Agent."""
+
+from typing import Optional
+
+import pydantic
+
+
+class VideoContent(pydantic.BaseModel):
+  """Information about a video, retrieved from the video content database.
+
+  Attributes:
+    video_id: A unique identifier for the video.
+    summary: A concise summary of the video's content.
+    transcript: The full or partial transcript of the video's audio, allowing
+      for detailed content analysis.
+  """
+  video_id: str
+  summary: Optional[str] = None
+  transcript: Optional[str] = None
