@@ -40,3 +40,20 @@ language queries.
 ## Deployment
 
 For production deployment, refer to the [Google ADK documentation](https://developers.google.com/adk/docs/deploy). Ensure that the deployment environment has the `FIRESTORE_DATABASE_NAME` environment variable configured with the correct Firestore database name. The service account running the agent must have `Cloud Datastore Viewer` permissions for the specified database.
+
+## Running Tests
+
+To run the unit tests for this agent, you first need to install the development
+dependencies, which include pytest.
+
+1. Install development requirements:
+
+   ```bash
+   pip install -r requirements_dev.txt
+   ```
+
+2. Run the tests: Once the dependencies are installed, you can run the test
+   suite using pytest:
+   ```bash
+   pytest .
+   ```
